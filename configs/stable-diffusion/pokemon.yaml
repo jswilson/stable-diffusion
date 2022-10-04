@@ -78,7 +78,7 @@ data:
     train:
       target: ldm.data.simple.hf_dataset
       params:
-        name: lambdalabs/pokemon-blip-captions
+        name: https://upcodes-dev.s3.amazonaws.com/upcodes-diagrams.parquet
         image_transforms:
         - target: torchvision.transforms.Resize
           params:
@@ -92,10 +92,10 @@ data:
       target: ldm.data.simple.TextOnly
       params:
         captions:
-        - "A pokemon with green eyes, large wings, and a hat"
-        - "A cute bunny rabbit"
-        - "Yoda"
-        - "An epic landscape photo of a mountain"
+        - "A technical diagram describing: Each owner of a covered mall building or of an open mall building shall provide both the building and fire departments with a lease plan showing the location of each occupancy and its exits after the certificate of occupancy has been issued. Modifications or changes in occupancy or use from that shown on the lease plan shall not be made without prior approval of the building official."
+        - "A technical diagram describing: The provisions of Sections 412.2.1 through 412.2.6 shall apply to airport traffic control towers occupied only for the following uses: Airport traffic control cab. Electrical and mechanical equipment rooms. Airport terminal radar and electronics rooms. Office spaces incidental to the tower operation. Lounges for employees, including sanitary facilities."
+        - "A technical diagram describing: Special loads that are applicable to the design of the building, structure or portions thereof, including but not limited to the loads of machinery or equipment, and that are greater than specified floor and roof loads shall be specified by their descriptions and locations."
+        - "A technical diagram describing: The dead load of rooftop-mounted photovoltaic panel systems, including rack support systems, shall be indicated on the construction documents."
         output_size: 512
         n_gpus: 2 # small hack to sure we see all our samples
 
