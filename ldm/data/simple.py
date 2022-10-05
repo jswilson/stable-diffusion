@@ -81,11 +81,6 @@ class TextOnly(Dataset):
         else:
             self.captions = captions
 
-        if n_gpus > 1:
-            # hack to make sure that all the captions appear on each gpu
-            repeated = [n_gpus*[x] for x in self.captions]
-            self.captions = []
-            [self.captions.extend(x) for x in repeated]
 
     def __len__(self):
         return len(self.captions)
