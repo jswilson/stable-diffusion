@@ -723,6 +723,12 @@ class LatentDiffusion(DDPM):
         z = self.get_first_stage_encoding(encoder_posterior).detach()
 
         if self.model.conditioning_key is not None:
+            print('we debuggin')
+            print(cond_key)
+            print(self.first_stage_key)
+            print(x)
+            print(type(x))
+            print('done debuggin')
             if cond_key is None:
                 cond_key = self.cond_stage_key
             if cond_key != self.first_stage_key:
