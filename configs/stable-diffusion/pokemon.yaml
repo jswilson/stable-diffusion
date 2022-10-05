@@ -97,7 +97,7 @@ data:
         - "A technical diagram describing: Special loads that are applicable to the design of the building, structure or portions thereof, including but not limited to the loads of machinery or equipment, and that are greater than specified floor and roof loads shall be specified by their descriptions and locations."
         - "A technical diagram describing: The dead load of rooftop-mounted photovoltaic panel systems, including rack support systems, shall be indicated on the construction documents."
         output_size: 512
-        n_gpus: 2 # small hack to sure we see all our samples
+        n_gpus: 1
 
 
 lightning:
