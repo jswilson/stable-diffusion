@@ -726,6 +726,7 @@ class LatentDiffusion(DDPM):
             print('we debuggin')
             print(cond_key)
             print(self.first_stage_key)
+            print(self.cond_stage_key)
             print(x)
             print(type(x))
             print('done debuggin')
