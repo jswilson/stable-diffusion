@@ -19,7 +19,7 @@ class FolderData(Dataset):
         self.paths = list(self.root_dir.rglob(f"*.{ext}"))
         image_transforms = [instantiate_from_config(tt) for tt in image_transforms]
         image_transforms.extend([transforms.ToTensor(),
-                                 transforms.Lambda(lambda x: rearrange(x * 2. - 1., 'c h w -> c h w'))])
+                                 transforms.Lambda(lambda x: rearrange(x * 2. - 1., 'c h w -> h w c'))])
         image_transforms = transforms.Compose(image_transforms)
         self.tform = image_transforms
 
@@ -55,7 +55,7 @@ def hf_dataset(
     ds = load_dataset(name, split=split, use_auth_token=True)
     image_transforms = [instantiate_from_config(tt) for tt in image_transforms]
     image_transforms.extend([transforms.ToTensor(),
-                                transforms.Lambda(lambda x: rearrange(x * 2. - 1., 'c h w -> c h w'))])
+                                transforms.Lambda(lambda x: rearrange(x * 2. - 1., 'c h w -> h w c'))])
     tform = transforms.Compose(image_transforms)
 
     assert image_column in ds.column_names, f"Didn't find column {image_column} in {ds.column_names}"
