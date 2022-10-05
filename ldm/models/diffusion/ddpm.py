@@ -871,6 +871,11 @@ class LatentDiffusion(DDPM):
 
     def shared_step(self, batch, **kwargs):
         x, c = self.get_input(batch, self.first_stage_key)
+        print('debug:')
+        print(x)
+        print(c)
+        print(self.first_stage_key)
+        print('')
         loss = self(x, c)
         return loss
 
