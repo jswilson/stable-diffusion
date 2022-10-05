@@ -19,7 +19,7 @@ class FolderData(Dataset):
         self.paths = list(self.root_dir.rglob(f"*.{ext}"))
         image_transforms = [instantiate_from_config(tt) for tt in image_transforms]
         image_transforms.extend([transforms.ToTensor(),
-                                 transforms.Lambda(lambda x: rearrange(x * 2. - 1., 'c h w -> h w c'))])
+                                 transforms.Lambda(lambda x: rearrange(x * 2. - 1., 'c h w -> c h w'))])
         image_transforms = transforms.Compose(image_transforms)
         self.tform = image_transforms
 
