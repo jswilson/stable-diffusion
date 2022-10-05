@@ -738,6 +738,8 @@ class LatentDiffusion(DDPM):
                 if isinstance(xc, dict) or isinstance(xc, list):
                     c = self.get_learned_conditioning(xc)
                 else:
+                    print('the problem:')
+                    print(xc)
                     c = self.get_learned_conditioning(xc.to(self.device))
             else:
                 c = xc
