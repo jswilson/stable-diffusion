@@ -734,8 +734,7 @@ class LatentDiffusion(DDPM):
                 cond_key = self.cond_stage_key
             if cond_key != self.first_stage_key:
                 if cond_key in ['caption', 'coordinates_bbox', "txt"]:
-                    # xc = batch[cond_key]
-                    xc = batch
+                    xc = batch[cond_key]
                 elif cond_key == 'class_label':
                     xc = batch
                 else:
@@ -748,7 +747,7 @@ class LatentDiffusion(DDPM):
                 else:
                     print('the problem:')
                     print(xc)
-                    c = self.get_learned_conditioning(torch.tensor([xc]).to(self.device))
+                    # c = self.get_learned_conditioning(torch.tensor([xc]).to(self.device))
                     # c = self.get_learned_conditioning(xc.to(self.device))
                     c = self.get_learned_conditioning(xc)
             else:
