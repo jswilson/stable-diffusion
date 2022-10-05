@@ -439,7 +439,7 @@ class Encoder(nn.Module):
         print('shape:')
         print(x.shape)
         print('permuting...')
-        torch.reshape(x, (1, 3, 0, 2))
+        x = torch.permute(x, (1, 3, 0, 2))
         print('done, shape:')
         print(x.shape)
         hs = [self.conv_in(x)]
