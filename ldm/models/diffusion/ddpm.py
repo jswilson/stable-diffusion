@@ -748,7 +748,8 @@ class LatentDiffusion(DDPM):
                     print('the problem:')
                     print(xc)
                     # c = self.get_learned_conditioning(torch.tensor([xc]).to(self.device))
-                    c = self.get_learned_conditioning(xc.to(self.device))
+                    # c = self.get_learned_conditioning(xc.to(self.device))
+                    c = xc
                     # c = self.get_learned_conditioning(xc)
             else:
                 c = xc
