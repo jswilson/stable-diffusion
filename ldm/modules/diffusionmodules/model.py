@@ -436,6 +436,8 @@ class Encoder(nn.Module):
         temb = None
 
         # downsampling
+        print(x)
+        print(x.shape)
         hs = [self.conv_in(x)]
         for i_level in range(self.num_resolutions):
             for i_block in range(self.num_res_blocks):
