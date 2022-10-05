@@ -436,8 +436,11 @@ class Encoder(nn.Module):
         temb = None
 
         # downsampling
+        print('shape:')
         print(x.shape)
+        print('permuting...')
         torch.permute(x, (1, 3, 0, 2))
+        print('done, shape:')
         print(x.shape)
         hs = [self.conv_in(x)]
         for i_level in range(self.num_resolutions):
