@@ -98,6 +98,7 @@ data:
         - "A technical diagram describing: The dead load of rooftop-mounted photovoltaic panel systems, including rack support systems, shall be indicated on the construction documents."
         output_size: 512
         n_gpus: 1
+    n_gpus: 1
 
 
 lightning:
